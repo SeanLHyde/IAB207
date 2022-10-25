@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="Event Creation" content="width=device-width, initial-scale=1">
+    <title>Event Creation</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+</head>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
+    crossorigin="anonymous"></script>
+
+<style>
+    nav ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background-color: rgb(19, 28, 130);
+    }
+
+    nav ul li {
+        float: left;
+    }
+
+
+    nav li a {
+        display: block;
+        color: rgb(255, 255, 255);
+        text-align: center;
+        padding: 15px 145px;
+        text-decoration: none;
+    }
+
+    .photo {
+        margin-top: 50px;
+        margin-bottom: 50px;
+        margin-right: 300px;
+        margin-left: 300px;
+    }
+
+    .form-group {
+        margin-top: 50px;
+        margin-bottom: 50px;
+        margin-right: 300px;
+        margin-left: 300px;
+    }
+</style>
+
+
+
+<header>
+    <nav>
+        <ul>
+            <li> <a href="index.html"> Home </a> </li>
+            <li> <a href="event_creation.html">Create an Event</a></li>
+            <li> <a href="Sign_in.html">Sign In</a></li>
+            <li> <a href="user_booking.html">Bookings</a></li>
+        </ul>
+    </nav>
+
+    <h2 class="text-center">Create your event</h2>
+
+    <figure class="photo">
+        <div class="row d-flex justify-content-center align-items-center h-50">
+            <img src="https://miro.medium.com/max/1400/1*ydhn1QPAKsrbt6UWfn3YnA.jpeg"
+                class="figure-img img-fluid rounded" alt="create your event">
+            <figcaption class="figure-caption"></figcaption>
+    </figure>
+
+    <main>
+
+        <div class="form-group">
+            <label for="colFormLabelLg" class="col-sm- col-form-label col-form-label-lg">Event Name</label>
+            <div class="col-sm-10">
+                <input type="name" class="form-control form-control-lg" id="colFormLabelLg" placeholder="Name">
+            </div>
+
+
+            <label for="colFormLabelLg" class="col-sm-2 col-form-label col-form-label-lg">Description</label>
+            <div class="col-sm-10">
+                <input type="description" class="form-control form-control-lg" id="colFormLabelLg"
+                    placeholder="short outline of event.">
+            </div>
+
+
+            <label for="colFormLabelLg" class="col-sm-2 col-form-label col-form-label-lg">Event Location</label>
+            <div class="col-sm-10">
+                <input type="location" class="form-control form-control-lg" id="colFormLabelLg" placeholder="Brisbane">
+            </div>
+
+
+
+            <label for="colFormLabelLg" class="col-sm-2 col-form-label col-form-label-lg">Event Date</label>
+            <div class="col-sm-10">
+                <input type="datetime" class="form-control form-control-lg" id="colFormLabelLg"
+                    placeholder="00/00/0000">
+            </div>
+
+
+            <label for="colFormLabelLg" class="col-sm-2 col-form-label col-form-label-lg">Ticket Quantity</label>
+            <div class="col-sm-10">
+                <input type="quantity" class="form-control form-control-lg" id="colFormLabelLg" placeholder="1-10000">
+            </div>
+
+
+            <label for="colFormLabelLg" class="col-sm-2 col-form-label col-form-label-lg">Ticket Price</label>
+            <div class="col-sm-10">
+                <input type="price" class="form-control form-control-lg" id="colFormLabelLg" placeholder="$0">
+            </div>
+
+            <label for="colFormLabelLg" class="col-sm-10 col-form-label col-form-label-lg">Insert Photo</label>
+            <input type="file" class="form-control" aria-label="file example" required>
+            <div class="invalid-feedback">Example invalid form file feedback</div>
+
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+        </div>
+
+
+
+
+    </main>
+
+</html>
