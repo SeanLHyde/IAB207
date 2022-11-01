@@ -1,5 +1,8 @@
+from distutils.log import debug
 from website import create_app
 
+app = create_app()
+
 if __name__=='__main__':
-    napp=create_app()
-    napp.run(debug=True)
+    app.run(debug=True)
+   
