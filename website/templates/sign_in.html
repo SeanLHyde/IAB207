@@ -1,56 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends "base.html" %}
+{% block title %}Login{% endblock%}
 
-<head>
-    <meta charset="utf-8">
-    <meta name="Sign In" content="width=device-width, initial-scale=1">
-    <title>Sign In</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
-</head>
-
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
-    crossorigin="anonymous"></script>
-
-
-<style>
-    nav ul {
-        list-style-type: none;
-        margin: 0;
-        padding: 0;
-        overflow: hidden;
-        background-color: rgb(31, 63, 6);
-    }
-
-    nav ul li {
-        float: left;
-    }
-
-
-    nav li a {
-        display: block;
-        color: rgb(255, 255, 255);
-        text-align: center;
-        padding: 15px 145px;
-        text-decoration: none;
-    }
-</style>
-
-
-<header>
-    <nav>
-        <ul>
-            <li> <a href="index.html"> Home </a> </li>
-            <li> <a href="event_creation.html">Create an Event</a></li>
-            <li> <a href="Sign_in.html">Sign In</a></li>
-            <li> <a href="user_booking.html">Bookings</a></li>
-        </ul>
-    </nav>
-
-
-
+{% block content %} 
     <section class="vh-100 bg-image" class="container h-50">
         <div class="row d-flex justify-content-center align-items-center h-50">
             <div class="col-12 col-md-9 col-lg-7 col-xxl-6">
@@ -106,4 +57,5 @@
         </div>
     </section>
 
-</html>
+</header>
+{% endblock %}

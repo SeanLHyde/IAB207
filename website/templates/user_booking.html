@@ -1,60 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends "base.html" %}
+{% block title %}User booking{% endblock%}
 
-<head>
-  <meta charset="utf-8">
-  <meta name="User Booking" content="width=device-width, initial-scale=1">
-  <title>User Booking</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
-</head>
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
-  integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
-
-<style>
-  nav ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: rgb(194, 189, 187);
-  }
-
-  nav ul li {
-    float: left;
-  }
-
-  nav li a {
-    display: block;
-    color: rgb(0, 0, 0);
-    text-align: center;
-    padding: 15px 145px;
-    text-decoration: none;
-  }
-
-  .card {
-    border-color: rgb(0, 0, 0);
-    align-self: middle;
-    border-style: solid;
-    border-width: 3px;
-    margin-top: 30px;
-    margin-bottom: 50px;
-    margin-right: 300px;
-    margin-left: 300px;
-
-  }
-</style>
-
-<header>
-  <nav>
-    <ul>
-      <li> <a href="index.html"> Home </a> </li>
-      <li> <a href="event_creation.html">Create an Event</a></li>
-      <li> <a href="Sign_in.html">Sign In</a></li>
-      <li> <a href="user_booking.html">Bookings</a></li>
-    </ul>
-  </nav>
+{% block content %} 
 
   <body>
     <h2 class="text-center"> Your Upcoming Event: </h2>
@@ -76,5 +23,4 @@
 
 
   </main>
-
-</html>
+{% endblock %}
