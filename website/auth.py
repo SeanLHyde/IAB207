@@ -1,13 +1,31 @@
-from flask import Blueprint, render_template
+from flask import Blueprint, render_template, request, flash
 
 
 #create a blueprint
 auth = Blueprint('auth', __name__)
 
-@auth.route('/login')
-
+@auth.route('/login', methods=['GET', 'POST'])
 def login():
-    return render_template('sign_in.html')
+    return render_template('login.html')
+
+@auth.route('/register', methods=['GET', 'POST'])
+def register():
+    if request.method == 'POST':
+        email = request.form.get('email')
+        name = request.form.get('firstName')
+        password1 = request.form.get('password1')
+        password2 = request.form.get('password2')
+
+        if len(email) < 1:
+            flash('Email must be a valid email.', category='error')
+        elif len(name) < 1:
+            flash('Name must be greator than one character.', category='error')
+        elif password1 != password2:
+            flash('Passwords do not match.', category='error')
+        else:
+            flash('Account created!', category='success')
+
+    return render_template('sign_up.html')
 # this is the hint for a login function
 # @bp.route('/login', methods=['GET', 'POST'])
 # def authenticate(): #view function
