@@ -21,3 +21,14 @@ class RegisterForm(FlaskForm):
 
     #submit button
     submit = SubmitField("Register")
+
+#Create new destination
+class EventForm(FlaskForm):
+    eventname=StringField("Event Name", validators=[InputRequired()])
+    description=TextAreaField("Description", validators=InputRequired())
+    location=StringField("Event Location", validators=[InputRequired()])
+    date=StringField("Date", validators=[InputRequired()])
+    ticketamount=StringField("Number of tickets", validators=[InputRequired()])
+    ticketprice=StringField("Price per ticket", validators=[InputRequired()])
+    image=StringField("Cover Image", validators=[InputRequired()])
+    submit = SubmitField("Create")
