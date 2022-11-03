@@ -12,32 +12,25 @@
                         <form method="POST">
 
                             <div class="form-outline mb-4">
-                                <label class="form-label" id="name" for="register">Your Name</label>
-                                <input type="text" id="register" class="form-control form-control-lg" />
+                                <input type="text" id="name" name="name" class="form-control form-control-lg" />
+                                <label for="name">Your Name</label>
                             </div>
 
                             <div class="form-outline mb-4">
-                                <input type="email" id="email" class="form-control form-control-lg" />
+                                <input type="email" id="email" name='email' class="form-control form-control-lg" />
                                 <label class="form-label" for="register">Your Email</label>
                             </div>
 
                             <div class="form-outline mb-4">
-                                <input type="password" id="password1" class="form-control form-control-lg" />
+                                <input type="password" id="password1" name="password1" class="form-control form-control-lg" />
                                 <label class="form-label" for="register">Password</label>
                             </div>
 
                             <div class="form-outline mb-4">
-                                <input type="password" id="password1" class="form-control form-control-lg" />
+                                <input type="password" id="password2" name='password2' class="form-control form-control-lg" />
                                 <label class="form-label" for="register">Repeat your password</label>
                             </div>
 
-                            <div class="form-check d-flex justify-content-center mb-5">
-                                <input class="form-check-input me-2" type="checkbox" value="" id="register" />
-                                <label class="form-check-label" for="register">
-                                    I agree all statements in <a href="#!" class="text-body"><u>Terms of
-                                            service</u></a>
-                                </label>
-                            </div>
                                 <button type="submit"
                                     class="btn btn-success btn-block btn-lg gradient-custom-4 text-body">Register</button>
                         </form>
