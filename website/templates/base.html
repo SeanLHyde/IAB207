@@ -9,6 +9,15 @@
       integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
       crossorigin="anonymous"
     ></script>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
+      integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"
+    />
     <title>{% block title %}{% endblock%}</title>
   </head>
   <body>
@@ -32,31 +41,6 @@
         padding: 15px 145px;
         text-decoration: none;
       }
-      .jumbotron {
-        background-color: rgb(120, 115, 94);
-        color: rgb(255, 255, 255);
-        padding-left: 50px;
-        padding-bottom: 100px;
-        padding-top: 100px;
-        text-align: center;
-        background-image: "";
-      }
-
-      .card-top {
-        width: 100%;
-        height: 500px;
-        object-fit: cover;
-      }
-      .card {
-        border-color: rgb(0, 0, 0);
-        align-self: middle;
-        border-style: solid;
-        border-width: 3px;
-        margin-top: 30px;
-        margin-bottom: 50px;
-        margin-right: 300px;
-        margin-left: 300px;
-      }
     </style>
 
     <header>
@@ -66,8 +50,30 @@
           <li><a href="event_creation">Create an Event</a></li>
           <li><a href="login">Login</a></li>
           <li><a href="user_booking">Bookings</a></li>
+          <li><a href="sign_up"></a>Sign up</li>
         </ul>
       </nav>
+      {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+          {% for category, message in messages %}
+            {% if category == 'error' %}
+            <div class="alert alert-danger alter-dismissable fade show" role="alert">
+              {{ message }}
+              <button type="button" class="close" data-dismiss="alert">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            {% else %}
+            <div class="alert alert-success alter-dismissable fade show" role="alert">
+              {{ message }}
+              <button type="button" class="close" data-dismiss="alert">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            {% endif %}
+          {% endfor %}
+        {% endif %}
+      {% endwith %}
     </header>
     <div class="container">{% block content %} {% endblock %}</div>
   </body>
