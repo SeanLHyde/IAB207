@@ -4,13 +4,15 @@ from flask_login import UserMixin
 
 
 
-
+#User Database which utilises id as its primary key
 class User(db.Model, UserMixin):
     id = db.Column(db.Integer, primary_key=True)
     email = db.Column(db.String(128), unique=True)
     password = db.Column(db.String(20))
     name = db.Column(db.String(30))
 
+#Events database which utilises id as its primary key and has a relationship
+#comments
 class Events(db.Model):
     __tablename__ = 'events'
     id = db.Column(db.Integer, primary_key=True)
@@ -24,7 +26,8 @@ class Events(db.Model):
     creatorname = db.Column(db.String(80))
     image = db.Column(db.String(400))
     comments = db.relationship('Comments')
-    
+
+#Comments database which utilises id as its primary key and events_id as its foreign key  
 class Comments(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     comment = db.Column(db.String(240))
