@@ -12,14 +12,15 @@ class User(db.Model, UserMixin):
     name = db.Column(db.String(30))
 
 class Events(db.Model):
-    __tablename__ = 'destinations'
+    __tablename__ = 'events'
     id = db.Column(db.Integer, primary_key=True)
     eventname = db.Column(db.String(80))
     description = db.Column(db.String(200))
     location = db.Column(db.String(80))
-    date = db.Column(db.DateTime, default=datetime.now())
+    date = db.Column(db.String(30))
     ticketamount = db.Column(db.String(10))
     ticketprice = db.Column(db.String(10))
+    creatorname = db.Column(db.String(80))
     image = db.Column(db.String(400))
 
     #comments = db.relationship('Comment', backref='destination')
