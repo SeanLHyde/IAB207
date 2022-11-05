@@ -1,108 +1,98 @@
-{% extends "base.html" %} 
-{% block title %}Event creation{% endblock%} 
-{% block content%}
 
-<style>
-    nav ul {
-        list-style-type: none;
-        margin: 0;
-        padding: 0;
-        overflow: hidden;
-        background-color: rgb(19, 28, 130);
-    }
-
-    nav ul li {
-        float: left;
-    }
-
-
-    nav li a {
-        display: block;
-        color: rgb(255, 255, 255);
-        text-align: center;
-        padding: 15px 145px;
-        text-decoration: none;
-    }
-
-    .photo {
-        margin-top: 50px;
-        margin-bottom: 50px;
-        margin-right: 300px;
-        margin-left: 300px;
-    }
-
-    .form-group {
-        margin-top: 50px;
-        margin-bottom: 50px;
-        margin-right: 300px;
-        margin-left: 300px;
-    }
-</style>
-
-    <h2 class="text-center">Create your event</h2>
-
-    <figure class="photo">
-        <div class="row d-flex justify-content-center align-items-center h-50">
-            <img src="https://miro.medium.com/max/1400/1*ydhn1QPAKsrbt6UWfn3YnA.jpeg"
-                class="figure-img img-fluid rounded" alt="create your event">
-            <figcaption class="figure-caption"></figcaption>
-    </figure>
-
-        <form method="POST">
+    {% extends "base.html" %} {% block title %}Event creation{% endblock%} {% block content
+        %}
+        
+        <style>
+            body {
+                background-color: white;
+            }
+        </style>
+        
+        <h2 class="text-center">Create your event</h2>
+        
+        <figure class="photo">
+            <div class="row d-flex justify-content-center align-items-center h-50">
+                <img src="https://miro.medium.com/max/1400/1*ydhn1QPAKsrbt6UWfn3YnA.jpeg" class="figure-img img-fluid rounded"
+                    alt="create your event">
+                <figcaption class="figure-caption"></figcaption>
+        </figure>
+        
+        <main>
+        
+            <header>
+        
+        
+        
+                <div class="jumbotron">
+                    <h1 class="display-2">Music Festivals Queensland</h1>
+                    <p class="lead">a concert that fits your music taste</p>
+                    <hr class="my-1">
+                    <p class="lead"> </p>
+                </div>
+        
+            </header>
+        
             <div class="form-group">
-                <!-- <label for="colFormLabelLg" class="col-sm- col-form-label col-form-label-lg">Event Name</label> -->
-                <div class="col-sm-10">
-                    {{ form.eventname.label(class="form control form-control-lg") }}
-                    {{ form.eventname(class="form-control" 'form-control-lg',placeholder="Name")}}
-                </div>
-
-
-                <!-- <label for="colFormLabelLg" class="col-sm-2 col-form-label col-form-label-lg">Description</label> -->
-                <div class="col-sm-10">
-                    {{ form.description.label(class="form control form-control-lg") }}
-                    {{ form.description(class="form-control" 'form-control-lg',placeholder="Short outline of event")}}
-                </div>
-
-
-                <!-- <label for="colFormLabelLg" class="col-sm-2 col-form-label col-form-label-lg">Event Location</label> -->
-                <div class="col-sm-10">
-                    {{ form.location.label(class="form control form-control-lg") }}
-                    {{ form.location(class="form-control" 'form-control-lg',placeholder="Location")}}
-                </div>
-
-
-
-                <!-- <label for="colFormLabelLg" class="col-sm-2 col-form-label col-form-label-lg">Event Date</label> -->
-                <div class="col-sm-10">
-                    {{ form.date.label(class="form control form-control-lg") }}
-                    {{ form.date(class="form-control" 'form-control-lg',placeholder="00/00/0000")}}
-                </div>
-
-
-                <!-- <label for="colFormLabelLg" class="col-sm-2 col-form-label col-form-label-lg">Ticket Quantity</label> -->
-                <div class="col-sm-10">
-                    {{ form.ticketamount.label(class="form control form-control-lg") }}
-                    {{ form.ticketamount(class="form-control" 'form-control-lg',placeholder="1-10000")}}
-                </div>
-
-
-                <!-- <label for="colFormLabelLg" class="col-sm-2 col-form-label col-form-label-lg">Ticket Price</label> -->
-                <div class="col-sm-10">
-                    {{ form.ticketprice.label(class="form control form-control-lg") }}
-                    {{ form.ticketprice(class="form-control" 'form-control-lg' ,placeholder="$0")}}
-                </div>
-
-                <div class="col-sm-10">
-                    {{ form.creatorname.label(class="form control form-control-lg") }}
-                    {{ form.creatorname(class="form-control" 'form-control-lg',placeholder="Your Name")}}
-                </div>
-                
-                    {{ form.image.label(class="form control form-control-lg") }}
-                    {{ form.image(class="form-control" 'form-control-lg')}}
-                <div class="invalid-feedback">Example invalid form file feedback</div>
-
-                <button type="submit" class="btn btn-primary">Submit</button>
-        </form>
-        </div>
-    </div>
-    {% endblock %}
+                <form method="POST">
+                    <div class="form-group">
+                        <!-- <label for="colFormLabelLg" class="col-sm- col-form-label col-form-label-lg">Event Name</label> -->
+                        <div class="col-sm-10">
+                            {{ form.eventname.label(class="form control form-control-lg") }}
+                            {{ form.eventname(class="form-control" 'form-control-lg',placeholder="Name")}}
+                        </div>
+        
+        
+                        <!-- <label for="colFormLabelLg" class="col-sm-2 col-form-label col-form-label-lg">Description</label> -->
+                        <div class="col-sm-10">
+                            {{ form.description.label(class="form control form-control-lg") }}
+                            {{ form.description(class="form-control" 'form-control-lg',placeholder="Short outline of event")}}
+                        </div>
+        
+        
+                        <!-- <label for="colFormLabelLg" class="col-sm-2 col-form-label col-form-label-lg">Event Location</label> -->
+                        <div class="col-sm-10">
+                            {{ form.location.label(class="form control form-control-lg") }}
+                            {{ form.location(class="form-control" 'form-control-lg',placeholder="Location")}}
+                        </div>
+        
+        
+        
+                        <!-- <label for="colFormLabelLg" class="col-sm-2 col-form-label col-form-label-lg">Event Date</label> -->
+                        <div class="col-sm-10">
+                            {{ form.date.label(class="form control form-control-lg") }}
+                            {{ form.date(class="form-control" 'form-control-lg',placeholder="00/00/0000")}}
+                        </div>
+        
+        
+                        <!-- <label for="colFormLabelLg" class="col-sm-2 col-form-label col-form-label-lg">Ticket Quantity</label> -->
+                        <div class="col-sm-10">
+                            {{ form.ticketamount.label(class="form control form-control-lg") }}
+                            {{ form.ticketamount(class="form-control" 'form-control-lg',placeholder="1-10000")}}
+                        </div>
+        
+        
+                        <!-- <label for="colFormLabelLg" class="col-sm-2 col-form-label col-form-label-lg">Ticket Price</label> -->
+                        <div class="col-sm-10">
+                            {{ form.ticketprice.label(class="form control form-control-lg") }}
+                            {{ form.ticketprice(class="form-control" 'form-control-lg' ,placeholder="$0")}}
+                        </div>
+        
+                        <div class="col-sm-10">
+                            {{ form.status.label(class="form control form-control-lg") }}
+                            {{ form.status(class="form-control" 'form-control-lg' ,placeholder="Open")}}
+                        </div>
+        
+                        <div class="col-sm-10">
+                            {{ form.creatorname.label(class="form control form-control-lg") }}
+                            {{ form.creatorname(class="form-control" 'form-control-lg',placeholder="Your Name")}}
+                        </div>
+                        
+                            {{ form.image.label(class="form control form-control-lg") }}
+                            {{ form.image(input= "file" ,class="form-control" 'form-control-lg')}}
+                        <div class="invalid-feedback">Example invalid form file feedback</div>
+        
+                        <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+            </div>
+        </main>
+        {% endblock %}

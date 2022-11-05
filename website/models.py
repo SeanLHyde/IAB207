@@ -20,6 +20,7 @@ class Events(db.Model):
     date = db.Column(db.String(30))
     ticketamount = db.Column(db.String(10))
     ticketprice = db.Column(db.String(10))
+    status = db.Column(db.String(10))
     creatorname = db.Column(db.String(80))
     image = db.Column(db.String(400))
     comments = db.relationship('Comments')

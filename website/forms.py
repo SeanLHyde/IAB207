@@ -1,6 +1,6 @@
 
 from flask_wtf import FlaskForm
-from wtforms.fields import TextAreaField,SubmitField, StringField, PasswordField
+from wtforms.fields import TextAreaField,SubmitField, StringField, PasswordField, FileField
 from wtforms.validators import InputRequired, Length, Email, EqualTo, email_validator
 
 #creates the login information
@@ -29,6 +29,7 @@ class EventForm(FlaskForm):
     date=StringField("Date", validators=[InputRequired()])
     ticketamount=StringField("Number of tickets", validators=[InputRequired()])
     ticketprice=StringField("Price per ticket", validators=[InputRequired()])
+    status=StringField("Event Status", validators=[InputRequired()])
     creatorname=StringField("Creator Name", validators=[InputRequired()])
     image=StringField("Cover Image", validators=[InputRequired()])
     submit = SubmitField("Create")
