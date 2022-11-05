@@ -1,5 +1,6 @@
-{% extends "base.html" %} {% block title %}Event creation{% endblock%} {% block content
-    %}
+{% extends "base.html" %} 
+{% block title %}Event creation{% endblock%} 
+{% block content%}
 
 <style>
     nav ul {
@@ -47,53 +48,61 @@
             <figcaption class="figure-caption"></figcaption>
     </figure>
 
-    <main>
-
-        <div class="form-group">
-            <label for="colFormLabelLg" class="col-sm- col-form-label col-form-label-lg">Event Name</label>
-            <div class="col-sm-10">
-                <input type="name" class="form-control form-control-lg" id="colFormLabelLg" placeholder="Name">
-            </div>
-
-
-            <label for="colFormLabelLg" class="col-sm-2 col-form-label col-form-label-lg">Description</label>
-            <div class="col-sm-10">
-                <input type="description" class="form-control form-control-lg" id="colFormLabelLg"
-                    placeholder="short outline of event.">
-            </div>
+        <form method="POST">
+            <div class="form-group">
+                <!-- <label for="colFormLabelLg" class="col-sm- col-form-label col-form-label-lg">Event Name</label> -->
+                <div class="col-sm-10">
+                    {{ form.eventname.label(class="form control form-control-lg") }}
+                    {{ form.eventname(class="form-control" 'form-control-lg',placeholder="Name")}}
+                </div>
 
 
-            <label for="colFormLabelLg" class="col-sm-2 col-form-label col-form-label-lg">Event Location</label>
-            <div class="col-sm-10">
-                <input type="location" class="form-control form-control-lg" id="colFormLabelLg" placeholder="Brisbane">
-            </div>
+                <!-- <label for="colFormLabelLg" class="col-sm-2 col-form-label col-form-label-lg">Description</label> -->
+                <div class="col-sm-10">
+                    {{ form.description.label(class="form control form-control-lg") }}
+                    {{ form.description(class="form-control" 'form-control-lg',placeholder="Short outline of event")}}
+                </div>
+
+
+                <!-- <label for="colFormLabelLg" class="col-sm-2 col-form-label col-form-label-lg">Event Location</label> -->
+                <div class="col-sm-10">
+                    {{ form.location.label(class="form control form-control-lg") }}
+                    {{ form.location(class="form-control" 'form-control-lg',placeholder="Location")}}
+                </div>
 
 
 
-            <label for="colFormLabelLg" class="col-sm-2 col-form-label col-form-label-lg">Event Date</label>
-            <div class="col-sm-10">
-                <input type="datetime" class="form-control form-control-lg" id="colFormLabelLg"
-                    placeholder="00/00/0000">
-            </div>
+                <!-- <label for="colFormLabelLg" class="col-sm-2 col-form-label col-form-label-lg">Event Date</label> -->
+                <div class="col-sm-10">
+                    {{ form.date.label(class="form control form-control-lg") }}
+                    {{ form.date(class="form-control" 'form-control-lg',placeholder="00/00/0000")}}
+                </div>
 
 
-            <label for="colFormLabelLg" class="col-sm-2 col-form-label col-form-label-lg">Ticket Quantity</label>
-            <div class="col-sm-10">
-                <input type="quantity" class="form-control form-control-lg" id="colFormLabelLg" placeholder="1-10000">
-            </div>
+                <!-- <label for="colFormLabelLg" class="col-sm-2 col-form-label col-form-label-lg">Ticket Quantity</label> -->
+                <div class="col-sm-10">
+                    {{ form.ticketamount.label(class="form control form-control-lg") }}
+                    {{ form.ticketamount(class="form-control" 'form-control-lg',placeholder="1-10000")}}
+                </div>
 
 
-            <label for="colFormLabelLg" class="col-sm-2 col-form-label col-form-label-lg">Ticket Price</label>
-            <div class="col-sm-10">
-                <input type="price" class="form-control form-control-lg" id="colFormLabelLg" placeholder="$0">
-            </div>
+                <!-- <label for="colFormLabelLg" class="col-sm-2 col-form-label col-form-label-lg">Ticket Price</label> -->
+                <div class="col-sm-10">
+                    {{ form.ticketprice.label(class="form control form-control-lg") }}
+                    {{ form.ticketprice(class="form-control" 'form-control-lg' ,placeholder="$0")}}
+                </div>
 
-            <label for="colFormLabelLg" class="col-sm-10 col-form-label col-form-label-lg">Insert Photo</label>
-            <input type="file" class="form-control" aria-label="file example" required>
-            <div class="invalid-feedback">Example invalid form file feedback</div>
+                <div class="col-sm-10">
+                    {{ form.creatorname.label(class="form control form-control-lg") }}
+                    {{ form.creatorname(class="form-control" 'form-control-lg',placeholder="Your Name")}}
+                </div>
+                
+                    {{ form.image.label(class="form control form-control-lg") }}
+                    {{ form.image(class="form-control" 'form-control-lg')}}
+                <div class="invalid-feedback">Example invalid form file feedback</div>
 
-            <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
         </div>
-        </div>
-    </main>
+    </div>
     {% endblock %}
