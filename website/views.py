@@ -38,7 +38,7 @@ def show(id):
 
 
 @views.route('/event_creation', methods = ['GET', 'POST'])
-#@login_required
+@login_required
 def create():
   print('Method type: ', request.method)
   form = EventForm()
