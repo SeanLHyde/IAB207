@@ -41,11 +41,11 @@ def eventDetails():
             print('Empty Comment!')
     return render_template('event_detail.html', form=form, comment=comment, user=current_user)
 
-@views.route('/<id>')
+@views.route('event_detail/<id>')
 def show(id):
     event = Events.query.filter_by(id=id).first()
     # create the comment form
-    cform = CommentForm()    
+    cform = CommentsForm()    
     return render_template('event/displayevent.html', event=event, form=cform, user=current_user)
 
 
