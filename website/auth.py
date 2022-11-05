@@ -8,6 +8,11 @@ auth = Blueprint('auth', __name__)
 
 def login():
     return render_template('sign_in.html')
+
+@auth.route("/sign_in")
+
+def signup():
+    return render_template("/sign_in.html")
 # this is the hint for a login function
 # @bp.route('/login', methods=['GET', 'POST'])
 # def authenticate(): #view function

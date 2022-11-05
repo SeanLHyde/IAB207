@@ -1,0 +1,124 @@
+{% extends "base.html" %} {% block title %}Event Details{% endblock%} {% block
+content %}
+
+<style>
+  .card {
+    border: 2px solid #e7e7e7;
+    align-self: center;
+    border-radius: 4px;
+    padding: .5rem;
+    border-width: 3px;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    margin-right: 300px;
+    margin-left: 300px;
+  }
+
+
+  .jumbotron {
+    background-color: rgb(45, 45, 45);
+    color: rgb(255, 255, 255);
+    padding-left: 50px;
+    padding-bottom: 50px;
+    padding-top: 100px;
+    text-align: center;
+    background-color: rgb(100, 128, 101);
+  }
+
+
+  .card-header {
+    color: rgb(255, 255, 255);
+    text-align: center;
+    background-color: rgb(10, 144, 0);
+    border: 2px solid #e7e7e7;
+
+  }
+
+  .CanCard-header {
+    color: rgb(255, 255, 255);
+    text-align: center;
+    background-color: red; 
+    border: 2px solid #e7e7e7;
+  }
+</style>
+
+
+
+
+<body>
+  <div class="jumbotron">
+    <h1 class="display-2">Afro Beats Concerts Brisbane</h1>
+    <p class="lead">Select From a Range of Concerts Below</p>
+  </div>
+</body>
+
+<main>
+  <div class="card">
+    <div class="card-header">
+      <large class="text-bold">UPCOMING</large>
+    </div>
+    <img
+      src="https://media.gq.com/photos/5e5ebc2cb7235e00084122d3/16:9/w_2990,h_1682,c_limit/burna-boy-gq-style-spring-summer-2020-promo.jpg"
+      class="card-img-top" alt="...">
+    <div class="card-body">
+      <h2>Burna Boy <span class="upcoming">upcoming </span></h1>
+        <p class="card-text">
+          Love, Damini is the sixth studio album by Nigerian singer Burna Boy. It was released on 8 July 2022 through
+          Atlantic Records. The album features guest appearances from Ladysmith Black Mambazo, J Hus, Vict0ny, Popcaan,
+          Blxst, Kehlani, Ed Sheeran, J Balvin, and Khalid.
+        </p>
+        <a href="burnaboy" class="btn btn-primary">Details</a>
+
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-header">
+      <large class="text-bold">UPCOMING</large>
+    </div>
+    <img src="https://media.pitchfork.com/photos/63600bd43a3c26e204a6024e/2:1/w_4000,h_2000,c_limit/Wizkid.jpg"
+      class="card-img-top" alt="...">
+    <div class="card-body">
+      <h2>Wizkid Concert</h3>
+        <p class="card-text">
+          Made in Lagos is the fourth studio album by Nigerian singer Wizkid. It was released on 30 October 2020 by
+          Starboy Entertainment and RCA Records. The album features guest appearances from Burna Boy, Skepta, H.E.R.,
+          Ella Mai and more.
+        </p>
+        <a href="wizkid" class="btn btn-primary">Details</a>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="CanCard-header">
+      <large class="text-bold">CANCELLED</large>
+    </div>
+    <img src="https://cdn3.pitchfork.com/longform/918/remaheader1440.jpg" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h2>Rema Concert</h3>
+        <p class="card-text">
+          Rave & Roses is the debut studio album by Nigerian singer Rema. It was released on 25 March 2022 via Jonzing
+          World and Mavin Records. The album included guest appearances from 6lack, Chris Brown, AJ Tracey, and Yseult.
+        </p>
+        <a href="cancelled" class="btn btn-primary">Details</a>
+    </div>
+  </div>
+
+
+  <div class="card">
+    <div class="CanCard-header">
+      <large class="text-bold">CANCELLED</large>
+    </div>
+    <img src="https://dailypost.ng/wp-content/uploads/2022/10/Davido.jpg" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h2>Davido Concert</h3>
+        <p class="card-text">
+          A Better Time is the third studio album by Nigerian singer Davido. It was released on October 13, 2022,
+          through Davido Music Worldwide, RCA Records and Sony Music.
+        </p>
+        <a href="cancelled" class="btn btn-primary">Details</a>
+    </div>
+  </div>
+</main>
+
+{% endblock %}

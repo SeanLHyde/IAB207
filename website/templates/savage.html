@@ -1,0 +1,220 @@
+{% extends "base.html" %} {% block title %}Event Details{% endblock%} {% block
+content %}
+<style>
+  #post {
+    margin: 10px;
+    padding: 6px;
+    padding-top: x 10px;
+    padding-bottom: 2px;
+    text-align: center;
+    background-color: #0095ff;
+    border-color: #ffffff
+  }
+
+  .comments {
+    margin-top: 5%;
+    margin-left: 20px;
+  }
+
+
+  .darker {
+    background-color: rgb(102, 102, 102);
+    float: right;
+    border-radius: 5px;
+    padding-left: 40px;
+    padding-right: 30px;
+    padding-top: 10px;
+  }
+
+  .comment {
+    background-color: rgba(6, 85, 244, 0.973);
+    float: left;
+    border-radius: 5px;
+    padding-left: 40px;
+    padding-right: 30px;
+    padding-top: 10px;
+
+  }
+
+  .comment h4,
+  .comment span,
+  .darker h4,
+  .darker span {
+    display: inline;
+  }
+
+  .comment p,
+  .comment span,
+  .darker p,
+  .darker span {
+    color: rgb(255, 255, 255);
+  }
+
+
+  h4 {
+    color: white;
+    font-weight: bold;
+  }
+
+  label {
+    color: rgb(212, 208, 208);
+  }
+
+  #align-form {
+    margin-top: 20px;
+  }
+
+  .form-group p a {
+    color: white;
+  }
+
+  #checkbx {
+    background-color: rgb(40, 40, 40);
+  }
+
+  #darker img {
+    margin-right: 15px;
+    position: static;
+  }
+
+
+  form {
+    border: 1px solid rgba(255, 255, 255, 0.973);
+    background-color: rgba(49, 49, 49, 0.973);
+    border-radius: 5px;
+    padding: 20px;
+  }
+
+  .card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    max-width: 600px;
+    margin: auto;
+    text-align: center;
+    font-family: arial;
+    padding-top: 50px;
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-bottom: 50px;
+  }
+
+  .price {
+    color: grey;
+    font-size: 22px;
+  }
+
+  .card button {
+    border: none;
+    outline: 0;
+    padding: 12px;
+    color: white;
+    background-color: rgb(98, 100, 234);
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+    font-size: 18px;
+  }
+
+  .card button:hover {
+    opacity: 0.7;
+  }
+</style>
+
+<header>
+  <h2 style="color:green; padding-top: 90px; padding-bottom: 10px; text-align: center;">upcoming</h2>
+</header>
+
+<body>
+
+  <div class="card">
+    <img
+      src="https://media.pitchfork.com/photos/5f7b3ba12dd72c64377cf95b/1:1/w_3000,h_3000,c_limit/savage%20mode%202_21%20savage%20metro%20boomin.jpg"
+      style="width:100%">
+    <h2>21 Savage - Savage Mode 2</h2>
+    <p class="price">$280 AUD</p>
+    <p>Savage Mode II is a collaborative studio album by Atlanta-based rapper 21 Savage and American record producer Metro Boomin. It was released on October 2, 2020, and was previewed through a trailer with narration by Morgan Freeman.</p>
+    <p>Date and time: 18:00 AEST, 31th December 2022</p>
+    <p>Location: Brisbane Convention & Exhibition Centre</P>
+    <p>Genre: Hip-Hop</p>
+    <div class="form-inline">
+      <input type="checkbox" name="check" id="checkbx" class="mr-1">
+      <label for="subscribe" style="color: orange;">Agree to Terms of Service</label>
+    </div>
+    <p><button style="background:#0095ff">Add to Cart</button></p>
+  </div>
+</body>
+
+
+<!-- comment section -->
+<section>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-5 col-md-6 col-12 pb-4">
+        <h1>Comments</h1>
+        <div class="comment mt-4 text-justify float-left">
+          <img src="https://cdn-icons-png.flaticon.com/128/149/149071.png" alt="" class="rounded-circle" width="40"
+            height="40">
+          <h4>Rivi Perera</h4>
+          <span>- 20 October, 2018</span>
+          <br>
+          <p>I can't wait for this concert, I have been waiting for it for so long, I heard Baby Keem might be
+            featuring</p>
+        </div>
+        <div class="text-justify darker mt-4 float-right">
+          <img src="https://cdn-icons-png.flaticon.com/128/149/149071.png" alt="" class="rounded-circle" width="40"
+            height="40">
+          <h4>David Romeo</h4>
+          <span>- 20 October, 2018</span>
+          <br>
+          <p>Flying in from Sydney for the weekend, just for this concert. I cant wait to see it live!!!</p>
+        </div>
+        <div class="comment mt-4 text-justify">
+          <img src="https://cdn-icons-png.flaticon.com/128/149/149071.png" alt="" class="rounded-circle" width="40"
+            height="40">
+          <h4>Hardik Patel</h4>
+          <span>- 20 October, 2018</span>
+          <br>
+          <p>For sure going to be the biggest event in Brisbane of 2022. Looking forward to seeing everyone there, and
+            having fun!!</p>
+        </div>
+        <div class="darker mt-4 text-justify">
+          <img src="https://cdn-icons-png.flaticon.com/128/149/149071.png" alt="" class="rounded-circle" width="40"
+            height="40">
+          <h4>Roland Johnson</h4>
+          <span>- 20 October, 2018</span>
+          <br>
+          <p>Only a few more sleeps. Almost a sold out event, i suggest booking now, before all the tickets get sold
+            out. </p>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-5 col-sm-4 offset-md-1 offset-sm-1 col-12 mt-4">
+        <form id="algin-form">
+          <div class="form-group">
+            <h4>Leave a comment</h4>
+            <label for="message">Message</label>
+            <textarea name="msg" id="" msg cols="30" rows="5" class="form-control"></textarea>
+          </div>
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" name="name" id="fullname" class="form-control">
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="text" name="email" id="email" class="form-control">
+          </div>
+          <div class="form-group">
+            <p class="text-secondary">If you dont have an account, sign up to leave a comment <a href="#"
+                class="alert-link">here</a> </p>
+          </div>
+          <div class="form-inline">
+            <input type="checkbox" name="check" id="checkbx" class="mr-1">
+            <label for="subscribe">Agree to Terms of Service</label>
+          </div>
+          <div class="form-group">
+            <button type="button" id="post" class="btn">Post Comment</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}

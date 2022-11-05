@@ -1,43 +1,55 @@
-{% extends "base.html" %} {% block title %}Hiphop{% endblock%} {% block content %}
-{% block content %} 
+{% extends "base.html" %} {% block title %}Event Details{% endblock%} {% block
+content %}
 <style>
-    nav ul {
-        list-style-type: none;
-        margin: 0;
-        padding: 0;
-        overflow: hidden;
-        background-color: rgb(231, 85, 0);
-    }
-
-    nav ul li {
-        float: left;
-    }
-
-    nav li a {
-        display: block;
-        color: rgb(0, 0, 0);
-        text-align: center;
-        padding: 15px 145px;
-        text-decoration: none;
-    }
-
-
     .card {
-        border-color: rgb(0, 0, 0);
+        border: 2px solid #e7e7e7;
         align-self: center;
-        border-style: solid;
+        border-radius: 4px;
+        padding: .5rem;
         border-width: 3px;
         margin-top: 100px;
         margin-bottom: 100px;
         margin-right: 300px;
         margin-left: 300px;
+    }
+ 
+
+    .jumbotron {
+        background-color: rgb(45, 45, 45);
+        color: rgb(255, 255, 255);
+        padding-left: 50px;
+        padding-bottom: 50px;
+        padding-top: 100px;
+        text-align: center;
+        background-color: rgb(100, 128, 101);
+    }
+
+
+    .card-header {
+        color: rgb(255, 255, 255);
+        text-align: center;
+        background-color: rgb(10, 144, 0);
+        border: 2px solid #e7e7e7;
 
     }
 </style>
 
-{% block content %} 
+
+<header>
+
+
+    <body>
+        <div class="jumbotron">
+            <h1 class="display-2">Hip-Hop Concerts Brisbane</h1>
+            <p class="lead">Select From a Range of Concerts Below</p>
+        </div>
+    </body>
+
     <main>
         <div class="card">
+            <div class="card-header">
+                <large class="text-bold">UPCOMING</large>
+              </div>
             <img src="https://hips.hearstapps.com/hmg-prod/images/index5-1655491798.jpg" class="card-img-top" alt="...">
             <div class="card-body">
                 <h2>Drake Concert</h3>
@@ -47,11 +59,14 @@
                         sole guest feature from 21 Savage, and production from a variety of producers, including Gordo,
                         Black Coffee, and 40
                     </p>
-                    <a href="event_detail" class="btn btn-primary">Details</a>
+                    <a href="drake" class="btn btn-primary">Details</a>
             </div>
         </div>
 
         <div class="card">
+            <div class="card-header">
+                <large class="text-bold">UPCOMING</large>
+              </div>
             <img src="https://www.nme.com/wp-content/uploads/2022/01/2022_LilDurk_ScottDudelson-Getty_2000x1270.jpg"
                 class="card-img-top" alt="...">
             <div class="card-body">
@@ -60,11 +75,14 @@
                         Lil Durk announces the continuation of his 2022 touring run with the ‘The 7220 Deluxe’ Tour. The
                         15-city second leg produced by Live Nation will kick off on soon.
                     </p>
-                    <a href="event_detail" class="btn btn-primary">Details</a>
+                    <a href="lildurk" class="btn btn-primary">Details</a>
             </div>
         </div>
 
         <div class="card">
+            <div class="card-header">
+                <large class="text-bold">UPCOMING</large>
+              </div>
             <img src="https://www.nme.com/wp-content/uploads/2021/07/Donda-Kanye-West-livestream-two.jpg"
                 class="card-img-top" alt="...">
             <div class="card-body">
@@ -73,12 +91,15 @@
                         Tickets for all Kanye West 2022 concerts are on sale here - Click for the hip hop icon's latest
                         tour info and the best Kanye West 2022 Tickets around!
                     </p>
-                    <a href="event_detail" class="btn btn-primary">Details</a>
+                    <a href="kanye" class="btn btn-primary">Details</a>
             </div>
         </div>
 
 
         <div class="card">
+            <div class="card-header">
+                <large class="text-bold">UPCOMING</large>
+              </div>
             <img src="https://media.9news.com/assets/KUSA/images/b4e93041-b821-46a9-aae3-05b77d16bafd/b4e93041-b821-46a9-aae3-05b77d16bafd_750x422.jpg"
                 class="card-img-top" alt="...">
             <div class="card-body">
@@ -87,7 +108,7 @@
                         Shayaa Bin Abraham-Joseph (1992) also known as 21 Savage is an American rapper hailing from
                         Atlanta, Georgia. 21 is considered one of the leading figures in hiphop.
                     </p>
-                    <a href="event_detail.html" class="btn btn-primary">Details</a>
+                    <a href="savage" class="btn btn-primary">Details</a>
             </div>
         </div>
     </main>

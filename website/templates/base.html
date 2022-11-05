@@ -1,74 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
-      crossorigin="anonymous"
-    ></script>
-    <title>{% block title %}{% endblock%}</title>
-  </head>
-  <body>
-    <style>
-      nav ul {
-        list-style-type: none;
-        margin: 0;
-        padding: 0;
-        overflow: hidden;
-        background-color: rgb(31, 63, 6);
-      }
 
-      nav ul li {
-        float: left;
-      }
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
+    crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
+    integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" />
+  <title>{% block title %}{% endblock%}</title>
+</head>
 
-      nav li a {
-        display: block;
-        color: rgb(255, 255, 255);
-        text-align: center;
-        padding: 15px 145px;
-        text-decoration: none;
-      }
-      .jumbotron {
-        background-color: rgb(120, 115, 94);
-        color: rgb(255, 255, 255);
-        padding-left: 50px;
-        padding-bottom: 100px;
-        padding-top: 100px;
-        text-align: center;
-        background-image: "";
-      }
+<body>
+  <style>
+    .navbar {
+      border-bottom: #ffffff 1px solid;
+      justify-content: right;
+      background-color: black;
+    }
 
-      .card-top {
-        width: 100%;
-        height: 500px;
-        object-fit: cover;
-      }
-      .card {
-        border-color: rgb(0, 0, 0);
-        align-self: middle;
-        border-style: solid;
-        border-width: 3px;
-        margin-top: 30px;
-        margin-bottom: 50px;
-        margin-right: 300px;
-        margin-left: 300px;
-      }
-    </style>
+    .navbar-brand {
+      color: white;
+      font-size: x-large;
+    }
 
-    <header>
-      <nav>
-        <ul>
-          <li><a href="/"> Home </a></li>
-          <li><a href="event_creation">Create an Event</a></li>
-          <li><a href="login">Login</a></li>
-          <li><a href="user_booking">Bookings</a></li>
-        </ul>
-      </nav>
-    </header>
-    <div class="container">{% block content %} {% endblock %}</div>
-  </body>
+    .nav-item {
+      display: block;
+      color: rgb(255, 255, 255);
+      padding: 1px 70px;
+    }
+
+  </style>
+
+  <header>
+    <nav class="navbar navbar-expand-lg bg-black navbar-dark fixed-top">
+      <div class="container content">
+        <a href="/" class="navbar-brand">Music QLD</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navmenu">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a href="/" class="nav-link">Home</a>
+            </li>
+            <li class="nav-item">
+              <a href="sign_in" class="nav-link" id="sign_in">Login/Sign in</a>
+            </li>
+            <li class="nav-item">
+              <a href="event_creation" class="nav-link">Create/Manage Event</a>
+            </li>
+            <li class="nav-item">
+              <a href="user_booking" class="nav-link">My Bookings</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <div class="container">{% block content %} {% endblock %}</div>
+</body>
+
 </html>
