@@ -54,10 +54,10 @@ def sign_up():
         elif password1 != password2:
             flash('Passwords do not match.', category='error')
         else:
-            create_user = User(email=email, name=name, password=generate_password_hash(password1, method='sha256'))
-            db.session.add(create_user)
+            create_new_user = User(email=email, name=name, password=generate_password_hash(password1, method='sha256'))
+            db.session.add(create_new_user)
             db.session.commit()
-            login_user(user, remember=True)
+            login_user(create_new_user, remember=True)
             flash('Account created!', category='success')
             return redirect(url_for('views.home'))
 
