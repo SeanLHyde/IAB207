@@ -51,7 +51,7 @@ def book(id):
   else:
     flash("Tickets successfully booked", category = 'success')
     return render_template('event_detail.html', event=avaliable, user=current_user)
-  return render_template('event/displayevent.html', events=events, form=cform, user=current_user)
+  return render_template('event/displayevent.html', events=event, form=form, user=current_user)
 
 
 @views.route('/event_creation', methods = ['GET', 'POST'])
