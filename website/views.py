@@ -33,7 +33,25 @@ def show(id):
     events = Events.query.filter_by(id=id).first()
     # create the comment form
     cform = CommentsForm()    
-    return render_template('event/displayevent.html', events=events, form=cform, user=current_user)
+
+    return render_template('event_detail.html', event=event, form=cform, user=current_user)
+
+@views.route('event_detail/<id>/booking', methods=['GET', 'POST'])
+@login_required
+def book(id):
+  print("step")
+  amount = request.form.get("quantity")
+  print(amount)
+  avaliable = Events.query.filter_by(id=id).first()
+  print(avaliable.ticketamount)
+  if not amount:
+    flash("Please select amount of tickets", category= 'error')
+  elif amount > avaliable.ticketamount:  
+    flash("Not enough tickets avalaible", category = 'error')
+  else:
+    flash("Tickets successfully booked", category = 'success')
+    return render_template('event_detail.html', event=avaliable, user=current_user)
+ return render_template('event/displayevent.html', events=events, form=cform, user=current_user)
 
 
 @views.route('/event_creation', methods = ['GET', 'POST'])
