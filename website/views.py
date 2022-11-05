@@ -11,23 +11,19 @@ from flask_bootstrap import Bootstrap
 
 views = Blueprint('views', __name__)
 
-
+#Home route which redirects to index.html
 @views.route('/')
 def home():
     events = Events.query.all()
     print(events[0].eventname)
     return render_template('index.html', user=current_user, event=events)
 
-
+#Not implemented, basic html
 @views.route('/user_booking')
 def userBooking():
     return render_template('user_booking.html', user=current_user)
 
-@views.route('/hiphop')
-def hipHop():
-    return render_template('hiphop.html',user=current_user)
-
-
+#Displays the details of the event based on the primary key "ID" in the database
 @views.route('event_detail/<id>')
 def show(id):
     events = Events.query.filter_by(id=id).first()
@@ -54,6 +50,8 @@ def book(id):
   return render_template('event/displayevent.html', events=event, form=form, user=current_user)
 
 
+#Route to create an event
+#Uses @loging_required to ensure only authenticated users can get to this page & create an even
 @views.route('/event_creation', methods = ['GET', 'POST'])
 @login_required
 def create():
@@ -78,7 +76,9 @@ def create():
       return redirect(url_for('views.home'))
   return render_template('event_creation.html', form=form, user=current_user)
 
-
+#Route to post a comment
+#As soon as the comment is posted, it redirects them to /post-comment/<events_id> & then redirects them back
+#to the event page & shows the new comment
 @views.route('/post-comment/<events_id>', methods=['POST'])
 @login_required
 def post_comment(events_id):
@@ -93,6 +93,7 @@ def post_comment(events_id):
         print('yes')
     return redirect(url_for('views.show', id=events_id))
 
+#Function for the search feature to search via description
 @views.route('/search')
 def search():
     if request.args and "search" in request.args:
