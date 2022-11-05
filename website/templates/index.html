@@ -1,61 +1,54 @@
 {% extends "base.html" %} {% block title %}Home{% endblock%} {% block content %}
+
+<style>
+  .jumbotron {
+    background-color: rgb(120, 115, 94);
+    color: rgb(255, 255, 255);
+    padding-left: 50px;
+    padding-bottom: 60px;
+    padding-top: 120px;
+    text-align: center;
+  }
+
+  .card-top {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+  }
+</style>
+
+<header>
+  <div class="jumbotron">
+    <h1 class="display-2">Music Festivals Queensland</h1>
+    <p class="lead">a concert that fits your music taste</p>
+    <hr class="my-1">
+    <form class="form-inline d-flex flex-nowrap" action="{{url_for('views.search')}}" >
+      <input type="text" placeholder = "Search by description..." name="search" class="form-control flex-grow-1 my-1 mr-sm-2" id="SearchForm">
+      <button type="submit" class="flex-shrink-1 btn btn-primary my-1">Submit</button>
+    </form>
+    <p class="lead"> </p>
+  </div>
+</header>
+
+
 <main>
+
   <div class="card-group">
+    {% for x in range(0,event|length) %}
     <div class="card">
-      <img
-        class="card-top"
-        src="https://s.abcnews.com/images/US/Hip-hop-protest-story_hpMain_16x9_1600.jpg"
-        alt="Card image cap"
-      />
+      <img class="card-top" src="{{event[x].eventname}}"
+        alt="Card image cap">
       <div class="card-body">
-        <h5 class="card-title">Hip-Hop</h5>
-        <p class="card-text">
-          Find tickets to all live music, concerts, tour dates and festivals in
-          and around Brisbane. Currently there are 4 upcoming events.
+        <h5 class="card-title">{{event[x].eventname}}</h5>
+        <p class="card-text">{{event[x].description}}
         </p>
-        <a href="hiphop" class="btn btn-primary">VIEW GENRE</a>
+        <a href="event_detail/{{event[x].id}}" class="btn btn-primary">View event</a>
       </div>
       <div class="card-footer">
-        <small class="text-muted">Upcoming</small>
+        <small class="text-muted">4 Upcoming Events</small>
       </div>
     </div>
-    <div class="card">
-      <img
-        class="card-top"
-        src="https://www.rollingstone.com/wp-content/uploads/2022/01/RS_Afrobeats_Spot_F_RGB.jpg?w=1024"
-        alt="Card image cap"
-      />
-      <div class="card-body">
-        <h5 class="card-title">Afrobeats</h5>
-        <p class="card-text">
-          Afrobeats, or Afro-pop or Afro-fusion, all popular music from West
-          Africa initially developed in Nigeria, Ghana, and the UK
-        </p>
-        <a href="hiphop" class="btn btn-primary">VIEW GENRE</a>
-      </div>
-      <div class="card-footer">
-        <small class="text-muted">Cancelled</small>
-      </div>
-    </div>
-    <div class="card">
-      <img
-        class="card-top"
-        src="https://i1.sndcdn.com/artworks-000199066863-198opt-t500x500.jpg"
-        alt="Card image cap"
-        alt="Card image cap"
-      />
-      <div class="card-body">
-        <h5 class="card-title">R&B</h5>
-        <p class="card-text">
-          Rhythm and blues, frequently abbreviated as R&B or R'n'B, is a genre
-          of popular music that originated in the 1940s .
-        </p>
-        <a href="hiphop" class="btn btn-primary">VIEW GENRE</a>
-      </div>
-      <div class="card-footer">
-        <small class="text-muted">Inactive</small>
-      </div>
-    </div>
+    {% endfor %}    
   </div>
 </main>
 {% endblock %}
