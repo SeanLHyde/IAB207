@@ -45,20 +45,22 @@
 
     <header>
       <nav>
+        {% if user.is_authenticated %}
         <ul>
-          {% if user.is_authenticated %}
           <li><a href="/"> Home </a></li>
           <li><a href="event_creation">Create an Event</a></li>
           <li><a href="user_booking">Bookings</a></li>
           <li><a href='logout'>Logout</a></li>
-          {% else %}
+        </ul>
+        {% else %}
+        <ul>
           <li><a href="/"> Home </a></li>
           <li><a href="event_creation">Create an Event</a></li>
           <li><a href="user_booking">Bookings</a></li>
           <li><a href="login">Login</a></li>
           <li><a href="sign_up">Sign up</a></li>
-          {% endif %}
         </ul>
+        {% endif %}
       </nav>
       {% with messages = get_flashed_messages(with_categories=true) %}
         {% if messages %}
