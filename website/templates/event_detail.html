@@ -107,18 +107,14 @@ content %}
       <div class="card" style="border-radius: 5px">
         <div class="card-body p-15">
           <h2 class="text-uppercase text-center mb-5">
-            Drake - Honestly Nevermind Tour
+            {{event.eventname}}
           </h2>
           <h3 class="text-center">Upcoming</h3>
 
           <div class="event-outline mb-4">
             <h4>Description</h4>
             <p>
-              Honestly, Nevermind is the seventh studio album by Canadian rapper
-              and singer Drake, which was surprise-released on June 17, 2022,
-              through OVO Sound and Republic Records. The album includes a sole
-              guest feature from 21 Savage, and production from a variety of
-              producers, including Gordo, Black Coffee, and 40.
+              {{event.description}}
             </p>
           </div>
 
@@ -128,46 +124,36 @@ content %}
           </div>
 
           <div class="event-outline mb-4">
-            <h4>Date & Time</h4>
-            <p>18:00 AEST, 19th December 2022</p>
+            <h4>Date</h4>
+            <p>{{event.date}}</p>
           </div>
 
           <div class="event-outline mb-4">
             <h4>Location</h4>
-            <p>Brisbane Convention & Exhibition Centre</p>
+            <p>{{event.location}}</p>
           </div>
 
           <div class="event-outline mb-4">
             <h4>Ticket Price</h4>
-            <p>$350 AUD per person</p>
+            <p>{{event.ticketprice}}</p>
           </div>
 
           <div class="form-outline mb-4">
-            <input
-              type="Ticket Quantity"
-              id="Quantity"
-              class="form-control form-control-lg"
-            />
+            <form method="POST">
+            <input type="Ticket Quantity" id="quantity" name = "quantity" class="form-control form-control-lg"/>
+            </form>
             <label class="form-label" for="Quantity"
-              >Ticket Quantity: 1-10max</label
+              >Ticket Quantity: 1-{{event.ticketamount}} max</label
             >
           </div>
 
-          <div class="form-check d-flex justify-content-center mb-5">
-            <input
-              class="form-check-input me-2"
-              type="checkbox"
-              value=""
-              id="register"
-            />
-            <label class="form-check-label" for="register">
-              I agree all statements in
-              <a href="#!" class="text-body"><u>Terms of service</u></a>
-            </label>
-          </div>
 
-          <div class="d-flex justify-content-center">
-            <a href="user_booking.html" class="btn btn-primary">Buy Tickets</a>
+
+          <div class="d-flex justify-content-center" >
+            <form action="/event_detail/{{event.id}}/booking" method="POST">
+            <button type="submit" class="btn btn-primary">Book Tickets</button>
+            <!-- <a href="" class="btn btn-primary" action="/event_detail/{{event.id}}/booking">Buy Tickets</a> -->
+          </form>
           </div>
         </div>
       </div>
@@ -190,7 +176,7 @@ content %}
     <div class="comment-post">
 
       <div class="col-md-10 col-sm-10">
-        {{ form.submit(class="btn btn-outline-info") }}
+
       </div>
     </div>
   </div>
