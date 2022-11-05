@@ -1,8 +1,8 @@
 
 from flask import Blueprint, render_template, request, redirect, url_for, flash
 from flask_login import login_required, current_user
-from .models import Events
-from .forms import EventForm, CommentForm
+from .models import Events, Comments
+from .forms import EventForm, CommentsForm
 from . import db
 import os
 from werkzeug.utils import secure_filename
@@ -25,9 +25,21 @@ def userBooking():
 def hipHop():
     return render_template('hiphop.html',user=current_user)
 
-@views.route('/event_detail')
+@views.route('/event_detail', methods=['GET', 'POST'])
+@login_required
 def eventDetails():
-    return render_template('event_detail.html',user=current_user)
+    form = CommentsForm()
+    comment = request.form.get('comment')
+    if request.method == 'POST':
+        
+        if comment != '':
+            create_new_comment = Comments(comment=comment)
+            db.session.add(create_new_comment)
+            db.session.commit()
+            print('Worked')
+        else:
+            print('Empty Comment!')
+    return render_template('event_detail.html', form=form, comment=comment, user=current_user)
 
 @views.route('/<id>')
 def show(id):
