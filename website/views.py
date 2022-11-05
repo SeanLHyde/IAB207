@@ -34,7 +34,7 @@ def show(id):
     # create the comment form
     cform = CommentsForm()    
 
-    return render_template('event_detail.html', event=event, form=cform, user=current_user)
+    return render_template('event_detail.html', event=events, form=cform, user=current_user)
 
 @views.route('event_detail/<id>/booking', methods=['GET', 'POST'])
 @login_required
@@ -51,7 +51,7 @@ def book(id):
   else:
     flash("Tickets successfully booked", category = 'success')
     return render_template('event_detail.html', event=avaliable, user=current_user)
- return render_template('event/displayevent.html', events=events, form=cform, user=current_user)
+  return render_template('event/displayevent.html', events=events, form=cform, user=current_user)
 
 
 @views.route('/event_creation', methods = ['GET', 'POST'])
