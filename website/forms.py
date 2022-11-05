@@ -22,6 +22,6 @@ class RegisterForm(FlaskForm):
     #submit button
     submit = SubmitField("Register")
 
-class CommentsForm(FlaskForm):
-    textArea=StringField("Comments", validators=[InputRequired])
-    submit = SubmitField("Post comment")
+# class CommentsForm(FlaskForm):
+#     textArea=StringField("Comments", validators=[InputRequired])
+#     submit = SubmitField("Post comment")
