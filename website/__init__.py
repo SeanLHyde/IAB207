@@ -29,7 +29,8 @@ def create_app():
     @login_manager.user_loader
     def load_user(id):
         return models.User.query.get(int(id))
-  
+    
+    #Create the Users, Comments, and Events DB
     with app.app_context():
         db.create_all()
     return app

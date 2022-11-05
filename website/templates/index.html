@@ -21,34 +21,43 @@
   <div class="jumbotron">
     <h1 class="display-2">Music Festivals Queensland</h1>
     <p class="lead">a concert that fits your music taste</p>
-    <hr class="my-1">
-    <form class="form-inline d-flex flex-nowrap" action="{{url_for('views.search')}}" >
-      <input type="text" placeholder = "Search by description..." name="search" class="form-control flex-grow-1 my-1 mr-sm-2" id="SearchForm">
-      <button type="submit" class="flex-shrink-1 btn btn-primary my-1">Submit</button>
+    <hr class="my-1" />
+    <form
+      class="form-inline d-flex flex-nowrap"
+      action="{{url_for('views.search')}}"
+    >
+      <input
+        type="text"
+        placeholder="Search by description..."
+        name="search"
+        class="form-control flex-grow-1 my-1 mr-sm-2"
+        id="SearchForm"
+      />
+      <button type="submit" class="flex-shrink-1 btn btn-primary my-1">
+        Submit
+      </button>
     </form>
-    <p class="lead"> </p>
+    <p class="lead"></p>
   </div>
 </header>
 
-
 <main>
-
   <div class="card-group">
     {% for x in range(0,event|length) %}
     <div class="card">
-      <img class="card-top" src="{{event[x].eventname}}"
-        alt="Card image cap">
+      <img class="card-top" src="{{event[x].eventname}}" alt="Card image cap" />
       <div class="card-body">
         <h5 class="card-title">{{event[x].eventname}}</h5>
-        <p class="card-text">{{event[x].description}}
-        </p>
-        <a href="event_detail/{{event[x].id}}" class="btn btn-primary">View event</a>
+        <p class="card-text">{{event[x].description}}</p>
+        <a href="event_detail/{{event[x].id}}" class="btn btn-primary"
+          >View event</a
+        >
       </div>
       <div class="card-footer">
-        <small class="text-muted">4 Upcoming Events</small>
+        <small class="text-muted">{{event[x].status}}</small>
       </div>
     </div>
-    {% endfor %}    
+    {% endfor %}
   </div>
 </main>
 {% endblock %}

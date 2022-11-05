@@ -8,6 +8,7 @@ from .forms import LoginForm, RegisterForm
 #create a blueprint
 auth = Blueprint('auth', __name__)
 
+#Login route that once a user signs in, remembers the signed in user until browser cache is cleared
 @auth.route('/login', methods=['GET', 'POST'])
 def login():
     form = LoginForm()
@@ -27,12 +28,16 @@ def login():
             flash('No account associated with that email', category='error')
     return render_template('login.html', form=form, user=current_user)
 
+#Logout route that requires the user to be logged in to access
 @auth.route('/logout')
 @login_required
 def logout():
     logout_user()
     return redirect(url_for('auth.login'))
 
+#Signup route that requires the user to provide information before submitting
+#If the user successfully signs up, the user is automatically signed in
+#and returned to the home page as an authenticated user
 @auth.route('/sign_up', methods=['GET', 'POST'])
 def sign_up():
     form = RegisterForm()
