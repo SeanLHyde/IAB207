@@ -2,59 +2,11 @@
 <main>
   <div class="card-group">
     <div class="card">
-      <img
-        class="card-top"
-        src="https://s.abcnews.com/images/US/Hip-hop-protest-story_hpMain_16x9_1600.jpg"
-        alt="Card image cap"
-      />
+      {% for events in events.id %}
       <div class="card-body">
-        <h5 class="card-title">Hip-Hop</h5>
-        <p class="card-text">
-          Find tickets to all live music, concerts, tour dates and festivals in
-          and around Brisbane. Currently there are 4 upcoming events.
-        </p>
-        <a href="hiphop" class="btn btn-primary">VIEW GENRE</a>
+        {{ events.eventname }}
       </div>
-      <div class="card-footer">
-        <small class="text-muted">Upcoming</small>
-      </div>
-    </div>
-    <div class="card">
-      <img
-        class="card-top"
-        src="https://www.rollingstone.com/wp-content/uploads/2022/01/RS_Afrobeats_Spot_F_RGB.jpg?w=1024"
-        alt="Card image cap"
-      />
-      <div class="card-body">
-        <h5 class="card-title">Afrobeats</h5>
-        <p class="card-text">
-          Afrobeats, or Afro-pop or Afro-fusion, all popular music from West
-          Africa initially developed in Nigeria, Ghana, and the UK
-        </p>
-        <a href="hiphop" class="btn btn-primary">VIEW GENRE</a>
-      </div>
-      <div class="card-footer">
-        <small class="text-muted">Cancelled</small>
-      </div>
-    </div>
-    <div class="card">
-      <img
-        class="card-top"
-        src="https://i1.sndcdn.com/artworks-000199066863-198opt-t500x500.jpg"
-        alt="Card image cap"
-        alt="Card image cap"
-      />
-      <div class="card-body">
-        <h5 class="card-title">R&B</h5>
-        <p class="card-text">
-          Rhythm and blues, frequently abbreviated as R&B or R'n'B, is a genre
-          of popular music that originated in the 1940s .
-        </p>
-        <a href="hiphop" class="btn btn-primary">VIEW GENRE</a>
-      </div>
-      <div class="card-footer">
-        <small class="text-muted">Inactive</small>
-      </div>
+      {% endfor %}
     </div>
   </div>
 </main>

@@ -48,8 +48,8 @@
         <div class="card-text"> {{events.comment}} </div>
         <br>
         {% for comment in events.comments %}
-          <div class="d-flex justify-content-between align-items-center"></div>
-          {{ comment.comment }}
+          <div class="d-flex justify-content-between align-items-center">{{ comment.comment }}</div>
+          
         {% endfor %}
         <br>
       </div>
