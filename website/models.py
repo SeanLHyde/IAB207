@@ -22,8 +22,9 @@ class Events(db.Model):
     ticketprice = db.Column(db.String(10))
     creatorname = db.Column(db.String(80))
     image = db.Column(db.String(400))
-
+    comments = db.relationship('Comments')
+    
 class Comments(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     comment = db.Column(db.String(240))
-    #comments = db.relationship('Comment', backref='destination')
+    events_id = db.Column(db.Integer, db.ForeignKey('events.id'))

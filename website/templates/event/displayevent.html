@@ -7,7 +7,7 @@
     <div class="row mt-5 mb-3">  
       <div class="col-md-12">  
         <div class="float-left">  
-          <h1 class="mb-0">{{event.eventname}}</h1>  
+          <h1 class="mb-0">{{events.eventname}}</h1>  
           <p>Exciting New Event</p>  
         </div>  
 
@@ -23,18 +23,18 @@
 
               <div class="media-body">  
                 <small class="font-weight-bold text-muted">Only limited tickets avaliable</small>  
-                <h3 class="mt-0">{{event.eventname}}</h3>
+                <h3 class="mt-0">{{events.eventname}}</h3>
                 <label for="colFormLabelLg" class="col-sm-2 col-form-label col-form-label-lg">Location</label>
-                <label for="colFormLabelLg" class="col-sm-2 col-form-label col-form-label-lg">{{event.location}}</label>  
+                <label for="colFormLabelLg" class="col-sm-2 col-form-label col-form-label-lg">{{events.location}}</label>  
                 <br>
                 <label for="colFormLabelLg" class="col-sm-2 col-form-label col-form-label-lg">Date</label>
-                <label for="colFormLabelLg" class="col-sm-2 col-form-label col-form-label-lg">{{event.date}}</label>  
+                <label for="colFormLabelLg" class="col-sm-2 col-form-label col-form-label-lg">{{events.date}}</label>  
                 <br>
                 <label for="colFormLabelLg" class="col-sm-2 col-form-label col-form-label-lg">Ticket Quantity</label>
-                <label for="colFormLabelLg" class="col-sm-2 col-form-label col-form-label-lg">{{event.ticketamount}}</label>  
+                <label for="colFormLabelLg" class="col-sm-2 col-form-label col-form-label-lg">{{events.ticketamount}}</label>  
                 <br>
                 <label for="colFormLabelLg" class="col-sm-2 col-form-label col-form-label-lg">Price per ticket</label>
-                <label for="colFormLabelLg" class="col-sm-2 col-form-label col-form-label-lg">{{event.ticketprice}}</label>  
+                <label for="colFormLabelLg" class="col-sm-2 col-form-label col-form-label-lg">{{events.ticketprice}}</label>  
                 <br>
                 <a href="#" class="btn btn-danger">Book Tickets</a>  
               </div>  
@@ -42,6 +42,25 @@
           </div>  
         </div>  
       </div>  
-    </div>     
+    </div>    
+    <div>
+      <div class="card">
+        <div class="card-text"> {{events.comment}} </div>
+        <br>
+        {% for comment in events.comments %}
+          <div class="d-flex justify-content-between align-items-center"></div>
+          {{ comment.comment }}
+        {% endfor %}
+        <br>
+      </div>
+      <br>
+      <form class="input group mb-3" method="POST" action="/post-comment/{{events.id}}">
+        <label for="colFormLabelLg" class="col-sm-2 col-form-label col-form-label-lg">Comment</label>
+        <label for="colFormLabelLg" class="form-control">{{form.comment}}</label>  
+        <div class="col-md-10 col-sm-10">
+          {{ form.submit(class="btn btn-outline-info") }}
+        </div>
+      </form>
+    </div> 
 
 {% endblock %}

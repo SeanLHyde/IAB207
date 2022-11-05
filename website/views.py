@@ -25,28 +25,27 @@ def userBooking():
 def hipHop():
     return render_template('hiphop.html',user=current_user)
 
-@views.route('/event_detail', methods=['GET', 'POST'])
-@login_required
-def eventDetails():
-    form = CommentsForm()
-    comment = request.form.get('comment')
-    if request.method == 'POST':
-        
-        if comment != '':
-            create_new_comment = Comments(comment=comment)
-            db.session.add(create_new_comment)
-            db.session.commit()
-            print('Worked')
-        else:
-            print('Empty Comment!')
-    return render_template('event_detail.html', form=form, comment=comment, user=current_user)
+# @views.route('/event_detail', methods=['GET', 'POST'])
+# @login_required
+# def eventDetails():
+#     form = CommentsForm()
+#     comment = request.form.get('comment')
+#     if request.method == 'POST':
+#         if comment != '':
+#             create_new_comment = Comments(comment=comment)
+#             db.session.add(create_new_comment)
+#             db.session.commit()
+#             print('Worked')
+#         else:
+#             print('Empty Comment!')
+#     return render_template('event_detail.html', form=form, comment=comment, user=current_user)
 
-@views.route('/event_detail/<id>')
-@login_required
+@views.route('event_detail/<id>')
 def show(id):
-    event = Events.query.filter_by(id=id).first()
+    events = Events.query.filter_by(id=id).first()
     # create the comment form
     cform = CommentsForm()    
+
     return render_template('event_detail.html', event=event, form=cform, user=current_user)
 
 @views.route('event_detail/<id>/booking', methods=['GET', 'POST'])
@@ -63,7 +62,8 @@ def book(id):
     flash("Not enough tickets avalaible", category = 'error')
   else:
     flash("Tickets successfully booked", category = 'success')
-  return render_template('event_detail.html', event=avaliable, user=current_user)
+    return render_template('event_detail.html', event=avaliable, user=current_user)
+ return render_template('event/displayevent.html', events=events, form=cform, user=current_user)
 
 
 @views.route('/event_creation', methods = ['GET', 'POST'])
@@ -90,6 +90,20 @@ def create():
     flash('Error creating event', category='error')
   return render_template('event_creation.html', form=form, user=current_user)
 
+
+@views.route('/post-comment/<events_id>', methods=['POST'])
+@login_required
+def post_comment(events_id):
+    comment = request.form.get('comment')
+
+    if not comment:
+        flash('You cannot post an empty comment')
+    else:
+        comment = Comments(comment=comment, events_id=events_id)
+        db.session.add(comment)
+        db.session.commit()
+        print('yes')
+    return redirect(url_for('views.show', id=events_id))
 
 # Function for storing image data correctly but doesn't currently work
 # def check_upload_file(form):
