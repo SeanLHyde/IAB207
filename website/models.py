@@ -23,4 +23,7 @@ class Events(db.Model):
     creatorname = db.Column(db.String(80))
     image = db.Column(db.String(400))
 
+class Comments(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    comment = db.Column(db.String(240))
     #comments = db.relationship('Comment', backref='destination')
