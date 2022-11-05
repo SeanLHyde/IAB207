@@ -12,27 +12,28 @@
                         <form method="POST">
 
                             <div class="form-outline mb-4">
-                                <input type="text" id="name" name="name" class="form-control form-control-lg" />
-                                <label for="name">Your Name</label>
+                                {{ form.name.label(class="form control form-control-lg") }}
+                                {{ form.name(class="form-control" 'form-control-lg')}}
                             </div>
 
                             <div class="form-outline mb-4">
-                                <input type="email" id="email" name='email' class="form-control form-control-lg" />
-                                <label class="form-label" for="register">Your Email</label>
+                                {{ form.email.label(class="form control form-control-lg") }}
+                                {{ form.email(class="form-control" 'form-control-lg')}}
                             </div>
 
                             <div class="form-outline mb-4">
-                                <input type="password" id="password1" name="password1" class="form-control form-control-lg" />
-                                <label class="form-label" for="register">Password</label>
+                                {{ form.password1.label(class="form control form-control-lg") }}
+                                {{ form.password1(class="form-control" 'form-control-lg')}}
                             </div>
 
                             <div class="form-outline mb-4">
-                                <input type="password" id="password2" name='password2' class="form-control form-control-lg" />
-                                <label class="form-label" for="register">Repeat your password</label>
+                                {{ form.password2.label(class="form control form-control-lg") }}
+                                {{ form.password2(class="form-control" 'form-control-lg')}}
                             </div>
 
-                                <button type="submit"
-                                    class="btn btn-success btn-block btn-lg gradient-custom-4 text-body">Register</button>
+                            <div class="d-flex justify-content-center">
+                                {{ form.submit(class="btn btn-outline-info") }}
+                            </div>
                         </form>
 
                     </div>

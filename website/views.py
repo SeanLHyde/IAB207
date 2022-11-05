@@ -1,3 +1,4 @@
+
 from flask import Blueprint, render_template, request, redirect, url_for, flash
 from flask_login import login_required, current_user
 from .models import Events
@@ -6,6 +7,7 @@ from . import db
 import os
 from werkzeug.utils import secure_filename
 from flask_bootstrap import Bootstrap
+
 
 views = Blueprint('views', __name__)
 
@@ -26,8 +28,6 @@ def hipHop():
 @views.route('/event_detail')
 def eventDetails():
     return render_template('event_detail.html',user=current_user)
-
-
 
 @views.route('/<id>')
 def show(id):

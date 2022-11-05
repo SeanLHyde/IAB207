@@ -11,18 +11,17 @@
 
                         <form method="POST">
                             <div class="form-outline mb-4">
-                                <input type="email" id="email" name='email' class="form-control form-control-lg" />
-                                <label class="form-label" for="register">Your Email</label>
+                                {{ form.email.label(class="form control form-control-lg") }}
+                                {{ form.email(class="form-control" 'form-control-lg')}}
                             </div>
 
                             <div class="form-outline mb-4">
-                                <input type="password" id="password" name="password" class="form-control form-control-lg" />
-                                <label class="form-label" for="register">Password</label>
+                                {{ form.password.label(class="form control form-control-lg") }}
+                                {{ form.password(class="form-control" 'form-control-lg')}}
                             </div>
 
                             <div class="d-flex justify-content-center">
-                                <button type="submit"
-                                    class="btn btn-success btn-block btn-lg gradient-custom-4 text-body">Login</button>
+                                {{ form.submit(class="btn btn-outline-info") }}
                             </div>
                         </form>
 

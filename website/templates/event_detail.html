@@ -187,30 +187,10 @@ content %}
 <article class="row">
   <div class="col-md-2 col-sm-2 hidden-xs"></div>
   <div class="col-md-10 col-sm-10">
-    <header class="text-left">
-      <div class="comment-user"><i class="user"></i> Username x</div>
-      <time class="comment-date" datetime="18-10-2022 01:05"
-        ><i class="fa fa-clock-o"></i> 10th, September 2022</time
-      >
-    </header>
     <div class="comment-post">
-      <p>I cant wait for this show</p>
 
-      <div class="form-outline col-sm-5 hidden-xs">
-        <input
-          type="CommentBox"
-          id="Comment"
-          class="form-control form-control-lg"
-        />
-        <label class="form-label" for="Comment">Write Comment Above</label>
-      </div>
       <div class="col-md-10 col-sm-10">
-        <button
-          type="button"
-          class="btn btn-success btn-block btn-lg gradient-custom-4 text-body"
-        >
-          post comment
-        </button>
+        {{ form.submit(class="btn btn-outline-info") }}
       </div>
     </div>
   </div>
